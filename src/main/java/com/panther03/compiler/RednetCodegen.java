@@ -1,15 +1,111 @@
 package com.panther03.compiler;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.JsonParser;
+import com.google.gson.stream.JsonReader;
 import com.panther03.compiler.VerilogParser.VerilogParser;
 import com.panther03.compiler.VerilogParser.VerilogParserBaseVisitor;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 
+import java.io.*;
 import java.util.*;
 
 
 public class RednetCodegen extends VerilogParserBaseVisitor<NBTBase> {
+    static Map<String, CircuitSpec> circuitSpecs;
+
+    public static void SetupCircuits(InputStream jsonStream) {
+        circuitSpecs = new HashMap<>();
+        JsonParser jsonParser = new JsonParser();
+        JsonReader reader = null;
+        try {
+            reader = new JsonReader(new InputStreamReader(jsonStream, "UTF-8"));
+        } catch (Exception e) {
+            throw new RuntimeException("java.lang.SMDerror: KMS-420");
+        }
+        try {
+            JsonElement jsonElement = jsonParser.parse(reader);
+            JsonObject jsonObject = jsonElement.getAsJsonObject();
+            readCircuits(jsonObject);
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            try {
+                reader.close();
+            } catch (IOException io) {
+                io.printStackTrace();
+            }
+        }
+    }
+
+    public static void AddCircuits(File jsonFile) {
+        JsonParser jsonParser = new JsonParser();
+        JsonReader reader = null;
+        // https://github.com/lumien231/Custom-Main-Menu/blob/cc934c1d96691190d7479927735d58dac4c263a9/src/main/java/lumien/custommainmenu/configuration/ConfigurationLoader.java#L123
+        try {
+            reader = new JsonReader(new FileReader(jsonFile));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
+            JsonElement jsonElement = jsonParser.parse(reader);
+            JsonObject jsonObject = jsonElement.getAsJsonObject();
+            readCircuits(jsonObject);
+        } catch (Exception e) {
+          throw e;
+        } finally {
+            try {
+                reader.close();
+            } catch (IOException io) {
+                io.printStackTrace();
+            }
+        }
+    }
+
+    private static void readCircuits(JsonObject jsonObj) {
+        for (Map.Entry<String, JsonElement> e: jsonObj.entrySet()) {
+            String circuitName = e.getKey();
+            JsonElement circuitSpecJson = e.getValue();
+            circuitSpecs.put(circuitName, parseCircuitJson(circuitSpecJson));
+        }
+    }
+
+    private static CircuitSpec parseCircuitJson(JsonElement je) {
+        JsonObject jo = je.getAsJsonObject();
+        String circuitName = jo.get("name").getAsString();
+        List<String> portNames = new ArrayList<>();
+        List<PortSpec> portSpecs = new ArrayList<>();
+        for (JsonElement e: jo.get("ports").getAsJsonArray()) {
+            JsonObject ejo = e.getAsJsonObject();
+            String portName = ejo.get("name").getAsString();
+            JsonElement portAnalogJson = ejo.get("analog");
+            boolean portAnalog = false;
+            if (portAnalogJson != null) {
+                portAnalog = portAnalogJson.getAsBoolean();
+            }
+            String portDirection = ejo.get("direction").getAsString();
+            boolean portIsInput;
+            if (portDirection.equals("input")) {
+                portIsInput = true;
+            } else if (portDirection.equals("output")) {
+                portIsInput = false;
+            } else {
+                throw new RuntimeException("download new brain");
+            }
+            JsonElement portSizeJson = ejo.get("size");
+            int portSize = 1;
+            if (portSizeJson != null) {
+                portSize = portSizeJson.getAsInt();
+            }
+            portNames.add(portName);
+            portSpecs.add(new PortSpec(portIsInput, portAnalog, portSize));
+        }
+        return new CircuitSpec(portNames, portSpecs, circuitName);
+    }
 
     private static class PortSpec {
         boolean isInput;
@@ -201,6 +297,60 @@ public class RednetCodegen extends VerilogParserBaseVisitor<NBTBase> {
             this.circuitName = circuitName;
         }
     }
+
+    /* ANALOG CIRCUITS */
+    private static final CircuitSpec AdderAnalog = new CircuitSpec(
+            new ArrayList<>(Arrays.asList("I0", "I1", "O")),
+            new ArrayList<>(Arrays.asList(
+                    new PortSpec(true, true, 1),
+                    new PortSpec(true, true, 1),
+                    new PortSpec(false, true, 1)
+            )),
+            "powercrystals.minefactoryreloaded.circuits.analog.AdderAnalog"
+    );
+
+    private static final CircuitSpec DecomposeIntToDecimal = new CircuitSpec(
+            new ArrayList<>(Arrays.asList("I", "SN", "D")),
+            new ArrayList<>(Arrays.asList(
+                    new PortSpec(true, true, 1),
+                    new PortSpec(true, false, 1),
+                    new PortSpec(false, false, 10)
+            )),
+            "powercrystals.minefactoryreloaded.circuits.analog.DecomposeIntToDecimal"
+    );
+
+    private static final CircuitSpec Max2 = new CircuitSpec(
+            new ArrayList<>(Arrays.asList("I", "D", "O")),
+            new ArrayList<>(Arrays.asList(
+                    new PortSpec(true, true, 1),
+                    new PortSpec(true, true, 1),
+                    new PortSpec(false, true, 1)
+            )),
+            "powercrystals.minefactoryreloaded.circuits.analog.Max2"
+    );
+
+    private static final CircuitSpec Max3 = new CircuitSpec(
+            new ArrayList<>(Arrays.asList("I", "D", "O")),
+            new ArrayList<>(Arrays.asList(
+                    new PortSpec(true, true, 1),
+                    new PortSpec(true, true, 1),
+                    new PortSpec(false, true, 1)
+            )),
+            "powercrystals.minefactoryreloaded.circuits.timing.Max3"
+    );
+
+    private static final CircuitSpec Max4 = new CircuitSpec(
+            new ArrayList<>(Arrays.asList("I", "D", "O")),
+            new ArrayList<>(Arrays.asList(
+                    new PortSpec(true, true, 1),
+                    new PortSpec(true, true, 1),
+                    new PortSpec(false, true, 1)
+            )),
+            "powercrystals.minefactoryreloaded.circuits.timing.Max4"
+    );
+
+
+
     private static final CircuitSpec TWO_AND = new CircuitSpec(
             new ArrayList<>(Arrays.asList("I0", "I1", "O")),
             new ArrayList<>(Arrays.asList(
@@ -300,28 +450,9 @@ public class RednetCodegen extends VerilogParserBaseVisitor<NBTBase> {
         VerilogParser.Range_Context range = ctx.module_instance(0).name_of_module_instance().range_();
         int range_size = PortExtraction.computeRangeSize(range);
 
-        CircuitSpec spec;
-        switch (circuit_name) {
-            case "ThreeAnd":
-                spec = THREE_AND;
-                break;
-            case "AnalogRandomizer":
-                spec = ANALOG_RANDOMIZER;
-                break;
-            case "DeMux16":
-                spec = DEMUX_SIXTEEN;
-                break;
-            case "TwoAnd":
-                spec = TWO_AND;
-                break;
-            case "Delay":
-                spec = DELAY;
-                break;
-            case "AnalogDelay":
-                spec = ANALOG_DELAY;
-                break;
-            default:
-                throw new RuntimeException("Unrecognized circuit " + circuit_name);
+        CircuitSpec spec = circuitSpecs.get(circuit_name);
+        if (spec == null) {
+            throw new RuntimeException("Unrecognized circuit " + circuit_name);
         }
         VerilogParser.List_of_port_connectionsContext conns_ctx = ctx.module_instance(0).list_of_port_connections();
         for (int i = 0; i < range_size; i++) {

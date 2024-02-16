@@ -121,6 +121,10 @@ public class BlockCompiler extends Block {
             }
             compilerMsg("Successfully compiled program! Right click block again to download program to memory card.", 0);
             result = (NBTTagCompound)n;
+            NBTTagCompound display = new NBTTagCompound();
+            display.setString("Name", name);
+            result.setTag("display", display);
+            RednetVerilogMod.info("NBT tag: " + result);
         }
 
         public void run() {
@@ -151,9 +155,9 @@ public class BlockCompiler extends Block {
                     }
                 }
                 if (compilerState == CompilerState.IDLE) {
+                    compilerState = CompilerState.RUNNING;
                     compilerMsg(player, "Starting compilation...", 0);
                     CompilerRunnable r = new CompilerRunnable(heldItem, player);
-                    compilerState = CompilerState.COMPLETE;
                     Thread t = new Thread(r);
                     t.start();
                 } else {

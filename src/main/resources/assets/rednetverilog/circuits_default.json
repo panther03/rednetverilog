@@ -1,0 +1,1232 @@
+{
+  "AdderAnalog": {
+    "ports": [
+      {
+        "name": "I0",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "analog": true,
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.analog.AdderAnalog"
+  },
+  "DecomposeIntToDecimal": {
+    "ports": [
+      {
+        "name": "I",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "SN",
+        "direction": "input"
+      },
+      {
+        "name": "D",
+        "direction": "output",
+        "size": 10
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.analog.DecomposeIntToDecimal"
+  },
+  "Max2": {
+    "ports": [
+      {
+        "name": "I0",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "analog": true,
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.analog.Max2"
+  },
+  "Max3": {
+    "ports": [
+      {
+        "name": "I0",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "I2",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "analog": true,
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.analog.Max3"
+  },
+  "Max4": {
+    "ports": [
+      {
+        "name": "I0",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "I2",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "I3",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "analog": true,
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.analog.Max4"
+  },
+  "Min2": {
+    "ports": [
+      {
+        "name": "I0",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "analog": true,
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.analog.Min2"
+  },
+  "Min3": {
+    "ports": [
+      {
+        "name": "I0",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "I2",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "analog": true,
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.analog.Min3"
+  },
+  "Min4": {
+    "ports": [
+      {
+        "name": "I0",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "I2",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "I3",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "analog": true,
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.analog.Min4"
+  },
+  "Multiplier": {
+    "ports": [
+      {
+        "name": "I0",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "analog": true,
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.analog.Multiplier"
+  },
+  "Negator": {
+    "ports": [
+      {
+        "name": "I",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "analog": true,
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.analog.Negator"
+  },
+  "RandomizerAnalog": {
+    "ports": [
+      {
+        "name": "Min",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "Max",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "Q",
+        "analog": true,
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.analog.RandomizerAnalog"
+  },
+  "Scaler": {
+    "ports": [
+      {
+        "name": "I",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "IMn",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "IMx",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "OMn",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "OMx",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "O0",
+        "analog": true,
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.analog.Scaler"
+  },
+  "SchmittTrigger": {
+    "ports": [
+      {
+        "name": "I",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "Pd",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "analog": true,
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.analog.SchmittTrigger"
+  },
+  "Subtractor": {
+    "ports": [
+      {
+        "name": "I0",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "analog": true,
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.analog.Subtractor"
+  },
+  "AdderDigitalFull": {
+    "ports": [
+      {
+        "name": "A",
+        "direction": "input"
+      },
+      {
+        "name": "B",
+        "direction": "input"
+      },
+      {
+        "name": "Cin",
+        "direction": "input"
+      },
+      {
+        "name": "S",
+        "direction": "output"
+      },
+      {
+        "name": "Cout",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.digital.AdderDigitalFull"
+  },
+  "AdderDigitalHalf": {
+    "ports": [
+      {
+        "name": "A",
+        "direction": "input"
+      },
+      {
+        "name": "B",
+        "direction": "input"
+      },
+      {
+        "name": "S",
+        "direction": "output"
+      },
+      {
+        "name": "C",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.digital.AdderDigitalHalf"
+  },
+  "Counter": {
+    "ports": [
+      {
+        "name": "INC",
+        "direction": "input"
+      },
+      {
+        "name": "DEC",
+        "direction": "input"
+      },
+      {
+        "name": "PRE",
+        "direction": "input"
+      },
+      {
+        "name": "R",
+        "direction": "input"
+      },
+      {
+        "name": "Q",
+        "direction": "output"
+      },
+      {
+        "name": "V",
+        "analog": true,
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.digital.Counter"
+  },
+  "DeMux16Analog": {
+    "ports": [
+      {
+        "name": "I",
+        "direction": "input"
+      },
+      {
+        "name": "S",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "direction": "output",
+        "size": 16
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.digital.DeMux16Analog"
+  },
+  "DeMux4": {
+    "ports": [
+      {
+        "name": "I",
+        "direction": "input"
+      },
+      {
+        "name": "S",
+        "direction": "input",
+        "size": 2
+      },
+      {
+        "name": "O",
+        "direction": "output",
+        "size": 4
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.digital.DeMux4"
+  },
+  "Inverter": {
+    "ports": [
+      {
+        "name": "I0",
+        "direction": "input"
+      },
+      {
+        "name": "O0",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.digital.Inverter"
+  },
+  "Mux4": {
+    "ports": [
+      {
+        "name": "I",
+        "direction": "input",
+        "size": 4
+      },
+      {
+        "name": "S",
+        "direction": "input",
+        "size": 2
+      },
+      {
+        "name": "O",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.digital.Mux4"
+  },
+  "RandomizerDigital": {
+    "ports": [
+      {
+        "name": "Q",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.digital.RandomizerDigital"
+  },
+  "SevenSegmentEncoder": {
+    "ports": [
+      {
+        "name": "I",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "direction": "output",
+        "size": 7
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.digital.SevenSegmentEncoder"
+  },
+  "FlipFlopJK": {
+    "ports": [
+      {
+        "name": "J",
+        "direction": "input"
+      },
+      {
+        "name": "K",
+        "direction": "input"
+      },
+      {
+        "name": "CLK",
+        "direction": "input"
+      },
+      {
+        "name": "Q",
+        "direction": "output"
+      },
+      {
+        "name": "Q#",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.latch.FlipFlopJK"
+  },
+  "FlipFlopT": {
+    "ports": [
+      {
+        "name": "T",
+        "direction": "input"
+      },
+      {
+        "name": "CLK",
+        "direction": "input"
+      },
+      {
+        "name": "Q",
+        "direction": "output"
+      },
+      {
+        "name": "Q#",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.latch.FlipFlopT"
+  },
+  "LatchDGated": {
+    "ports": [
+      {
+        "name": "D",
+        "direction": "input"
+      },
+      {
+        "name": "E",
+        "direction": "input"
+      },
+      {
+        "name": "Q",
+        "direction": "output"
+      },
+      {
+        "name": "Q#",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.latch.LatchDGated"
+  },
+  "LatchSR": {
+    "ports": [
+      {
+        "name": "R",
+        "direction": "input"
+      },
+      {
+        "name": "S",
+        "direction": "input"
+      },
+      {
+        "name": "Q",
+        "direction": "output"
+      },
+      {
+        "name": "Q#",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.latch.LatchSR"
+  },
+  "LatchSRGated": {
+    "ports": [
+      {
+        "name": "R",
+        "direction": "input"
+      },
+      {
+        "name": "S",
+        "direction": "input"
+      },
+      {
+        "name": "E",
+        "direction": "input"
+      },
+      {
+        "name": "Q",
+        "direction": "output"
+      },
+      {
+        "name": "Q#",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.latch.LatchSRGated"
+  },
+  "And2": {
+    "ports": [
+      {
+        "name": "I0",
+
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+
+        "direction": "input"
+      },
+      {
+        "name": "O",
+
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logic.And2"
+  },
+  "And3": {
+    "ports": [
+      {
+        "name": "I0",
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "direction": "input"
+      },
+      {
+        "name": "I2",
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logic.And3"
+  },
+  "And4": {
+    "ports": [
+      {
+        "name": "I0",
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "direction": "input"
+      },
+      {
+        "name": "I2",
+        "direction": "input"
+      },
+      {
+        "name": "I3",
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logic.And4"
+  },
+  "Nand2": {
+    "ports": [
+      {
+        "name": "I0",
+
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+
+        "direction": "input"
+      },
+      {
+        "name": "O",
+
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logic.Nand2"
+  },
+  "Nand3": {
+    "ports": [
+      {
+        "name": "I0",
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "direction": "input"
+      },
+      {
+        "name": "I2",
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logic.Nand3"
+  },
+  "Nand4": {
+    "ports": [
+      {
+        "name": "I0",
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "direction": "input"
+      },
+      {
+        "name": "I2",
+        "direction": "input"
+      },
+      {
+        "name": "I3",
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logic.Nand4"
+  },
+  "Nor2": {
+    "ports": [
+      {
+        "name": "I0",
+
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+
+        "direction": "input"
+      },
+      {
+        "name": "O",
+
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logic.Nor2"
+  },
+  "Nor3": {
+    "ports": [
+      {
+        "name": "I0",
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "direction": "input"
+      },
+      {
+        "name": "I2",
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logic.Nor3"
+  },
+  "Nor4": {
+    "ports": [
+      {
+        "name": "I0",
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "direction": "input"
+      },
+      {
+        "name": "I2",
+        "direction": "input"
+      },
+      {
+        "name": "I3",
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logic.Nor4"
+  },
+  "Or2": {
+    "ports": [
+      {
+        "name": "I0",
+
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+
+        "direction": "input"
+      },
+      {
+        "name": "O",
+
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logic.Or2"
+  },
+  "Or3": {
+    "ports": [
+      {
+        "name": "I0",
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "direction": "input"
+      },
+      {
+        "name": "I2",
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logic.Or3"
+  },
+  "Or4": {
+    "ports": [
+      {
+        "name": "I0",
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "direction": "input"
+      },
+      {
+        "name": "I2",
+        "direction": "input"
+      },
+      {
+        "name": "I3",
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logic.Or4"
+  },
+  "Xnor2": {
+    "ports": [
+      {
+        "name": "I0",
+
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+
+        "direction": "input"
+      },
+      {
+        "name": "O",
+
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logic.Xnor2"
+  },
+  "Xnor3": {
+    "ports": [
+      {
+        "name": "I0",
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "direction": "input"
+      },
+      {
+        "name": "I2",
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logic.Xnor3"
+  },
+  "Xnor4": {
+    "ports": [
+      {
+        "name": "I0",
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "direction": "input"
+      },
+      {
+        "name": "I2",
+        "direction": "input"
+      },
+      {
+        "name": "I3",
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logic.Xnor4"
+  },
+  "Xor2": {
+    "ports": [
+      {
+        "name": "I0",
+
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+
+        "direction": "input"
+      },
+      {
+        "name": "O",
+
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logic.Xor2"
+  },
+  "Xor3": {
+    "ports": [
+      {
+        "name": "I0",
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "direction": "input"
+      },
+      {
+        "name": "I2",
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logic.Xor3"
+  },
+  "Xor4": {
+    "ports": [
+      {
+        "name": "I0",
+        "direction": "input"
+      },
+      {
+        "name": "I1",
+        "direction": "input"
+      },
+      {
+        "name": "I2",
+        "direction": "input"
+      },
+      {
+        "name": "I3",
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logic.Xor4"
+  },
+  "Equal": {
+    "ports": [
+      {
+        "name": "A",
+        "direction": "input"
+      },
+      {
+        "name": "B",
+        "direction": "input"
+      },
+      {
+        "name": "Q",
+        "direction": "input"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logicboolean.Equal"
+  },
+  "Greater": {
+    "ports": [
+      {
+        "name": "A",
+        "direction": "input"
+      },
+      {
+        "name": "B",
+        "direction": "input"
+      },
+      {
+        "name": "Q",
+        "direction": "input"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logicboolean.Greater"
+  },
+  "GreaterOrEqual": {
+    "ports": [
+      {
+        "name": "A",
+        "direction": "input"
+      },
+      {
+        "name": "B",
+        "direction": "input"
+      },
+      {
+        "name": "Q",
+        "direction": "input"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logicboolean.GreaterOrEqual"
+  },
+  "Less": {
+    "ports": [
+      {
+        "name": "A",
+        "direction": "input"
+      },
+      {
+        "name": "B",
+        "direction": "input"
+      },
+      {
+        "name": "Q",
+        "direction": "input"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logicboolean.Less"
+  },
+  "LessOrEqual": {
+    "ports": [
+      {
+        "name": "A",
+        "direction": "input"
+      },
+      {
+        "name": "B",
+        "direction": "input"
+      },
+      {
+        "name": "Q",
+        "direction": "input"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logicboolean.LessOrEqual"
+  },
+  "NotEqual": {
+    "ports": [
+      {
+        "name": "A",
+        "direction": "input"
+      },
+      {
+        "name": "B",
+        "direction": "input"
+      },
+      {
+        "name": "Q",
+        "direction": "input"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.logicboolean.NotEqual"
+  },
+  "Delay" : {
+    "ports": [
+      {
+        "name": "I",
+        "direction": "input"
+      },
+      {
+        "name": "D",
+        "analog": true,
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.timing.Delay"
+  },
+  "Multipulse" : {
+    "ports": [
+      {
+        "name": "I",
+        "direction": "input"
+      },
+      {
+        "name": "CLK",
+        "direction": "input"
+      },
+      {
+        "name": "CNT",
+        "direction": "input"
+      },
+      {
+        "name": "THi",
+        "direction": "input"
+      },
+      {
+        "name": "TLo",
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "direction": "output"
+      },
+      {
+        "name": "DN",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.timing.Multipulse"
+  },
+  "OneShot" : {
+    "ports": [
+      {
+        "name": "I",
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.timing.OneShot"
+  },
+  "PulseLengthener" : {
+    "ports": [
+      {
+        "name": "I",
+        "direction": "input"
+      },
+      {
+        "name": "L",
+        "direction": "input"
+      },
+      {
+        "name": "O",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.timing.PulseLengthener"
+  },
+  "SawtoothFalling" : {
+    "ports": [
+      {
+        "name": "Q",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.wave.SawtoothFalling"
+  },
+  "SawtoothRising" : {
+    "ports": [
+      {
+        "name": "Q",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.wave.SawtoothRising"
+  },
+  "Sine" : {
+    "ports": [
+      {
+        "name": "Q",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.wave.Sine"
+  },
+  "Square" : {
+    "ports": [
+      {
+        "name": "Pd",
+        "direction": "input"
+      },
+      {
+        "name": "Q",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.wave.Square"
+  },
+  "Triangle" : {
+    "ports": [
+      {
+        "name": "Q",
+        "direction": "output"
+      }
+    ],
+    "name": "powercrystals.minefactoryreloaded.circuits.wave.Triangle"
+  }
+}
