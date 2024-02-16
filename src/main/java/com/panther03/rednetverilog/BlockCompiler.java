@@ -1,8 +1,10 @@
 package com.panther03.rednetverilog;
 
-import com.panther03.compiler.Compiler;
-import com.panther03.compiler.VerilogParser.VerilogLexer;
-import com.panther03.compiler.VerilogParser.VerilogParser;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Scanner;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,22 +13,24 @@ import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
+
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Scanner;
+import com.panther03.compiler.Compiler;
+import com.panther03.compiler.VerilogParser.VerilogLexer;
+import com.panther03.compiler.VerilogParser.VerilogParser;
 
 public class BlockCompiler extends Block {
+
     public static enum CompilerState {
         IDLE,
         RUNNING,
         COMPLETE
     }
+
     static CompilerState compilerState = CompilerState.IDLE;
     static NBTTagCompound result;
 
@@ -51,6 +55,7 @@ public class BlockCompiler extends Block {
     }
 
     static class CompilerRunnable implements Runnable {
+
         ItemStack stack;
         EntityPlayer player;
 
@@ -62,7 +67,6 @@ public class BlockCompiler extends Block {
         public void compilerMsg(String msg, int level) {
             BlockCompiler.compilerMsg(player, msg, level);
         }
-
 
         private NBTBase compileProgram(String string) {
             CharStream input = CharStreams.fromString(string);
@@ -105,7 +109,8 @@ public class BlockCompiler extends Block {
             }
             StringBuilder program = new StringBuilder();
             while (s.hasNextLine()) {
-                program.append(s.nextLine()).append(System.lineSeparator());
+                program.append(s.nextLine())
+                    .append(System.lineSeparator());
             }
             RednetVerilogMod.info("Downloaded program: " + program);
 
@@ -119,8 +124,10 @@ public class BlockCompiler extends Block {
             if (n == null) {
                 compilerMsg("Exception during compilation; no tag data returned from compiler", 2);
             }
-            compilerMsg("Successfully compiled program! Right click block again to download program to memory card.", 0);
-            result = (NBTTagCompound)n;
+            compilerMsg(
+                "Successfully compiled program! Right click block again to download program to memory card.",
+                0);
+            result = (NBTTagCompound) n;
             NBTTagCompound display = new NBTTagCompound();
             display.setString("Name", name);
             result.setTag("display", display);
@@ -136,20 +143,22 @@ public class BlockCompiler extends Block {
         }
     }
 
-
     @Override
-    public synchronized boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int meta, float hitX, float hitY, float hitZ) {
+    public synchronized boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int meta,
+        float hitX, float hitY, float hitZ) {
         ItemStack heldItem = player.getHeldItem();
         if (heldItem == null) {
             return false;
         }
-        if (!world.isRemote){
-            if (heldItem.getUnlocalizedName().equals("item.mfr.rednet.memorycard")) {
+        if (!world.isRemote) {
+            if (heldItem.getUnlocalizedName()
+                .equals("item.mfr.rednet.memorycard")) {
                 if (compilerState == CompilerState.COMPLETE) {
                     compilerState = CompilerState.IDLE;
                     if (result != null) {
                         compilerMsg(player, "Downloaded compiled program to memory card successfully!", 0);
-                        player.getHeldItem().setTagCompound(result);
+                        player.getHeldItem()
+                            .setTagCompound(result);
                         result = null;
                         return true;
                     }

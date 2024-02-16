@@ -1,26 +1,23 @@
 package com.panther03.compiler;
 
-
-import com.panther03.compiler.VerilogParser.VerilogLexer;
-import com.panther03.compiler.VerilogParser.VerilogParser;
-import org.antlr.v4.runtime.CharStream;
-import org.antlr.v4.runtime.CharStreams;
-import org.antlr.v4.runtime.CommonTokenStream;
-import org.antlr.v4.runtime.tree.ParseTree;
-import org.antlr.v4.runtime.Token;
-import org.antlr.v4.gui.TreeViewer;
-import org.junit.jupiter.api.Test;
-
-import javax.swing.*;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
 
+import javax.swing.*;
+
+import org.antlr.v4.gui.TreeViewer;
+import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.Token;
+import org.antlr.v4.runtime.tree.ParseTree;
+import org.junit.jupiter.api.Test;
+
+import com.panther03.compiler.VerilogParser.VerilogLexer;
+import com.panther03.compiler.VerilogParser.VerilogParser;
 
 public class CompilerTest {
-
-
-
 
     @Test
     void simpleTest() {
@@ -49,12 +46,11 @@ public class CompilerTest {
         tokens.seek(0);
         VerilogParser parser;
         try {
-             parser = new VerilogParser(tokens);
+            parser = new VerilogParser(tokens);
         } catch (Exception e) {
             System.out.println("parser error: " + e.toString());
             return;
         }
-
 
         ParseTree tree = parser.source_text();
         System.out.println("Rule names: " + Arrays.toString(parser.getRuleNames()));
@@ -66,12 +62,12 @@ public class CompilerTest {
 
         JFrame frame = new JFrame("Antlr AST");
         JPanel panel = new JPanel();
-        TreeViewer viewer = new TreeViewer(Arrays.asList(
-                parser.getRuleNames()),tree);
+        TreeViewer viewer = new TreeViewer(Arrays.asList(parser.getRuleNames()), tree);
         viewer.setScale(1.5); // Scale a little
         panel.add(viewer);
         frame.add(panel);
         frame.addWindowListener(new java.awt.event.WindowAdapter() {
+
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
                 latch.countDown(); // Release the latch when the window is closing
@@ -89,4 +85,3 @@ public class CompilerTest {
 
     }
 }
-

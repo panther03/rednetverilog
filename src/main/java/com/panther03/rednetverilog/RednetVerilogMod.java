@@ -1,16 +1,18 @@
 package com.panther03.rednetverilog;
 
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.*;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Tags.MODID, version = Tags.VERSION, name = Tags.MODNAME, acceptedMinecraftVersions = "[1.7.10]")
 public class RednetVerilogMod {
@@ -20,7 +22,7 @@ public class RednetVerilogMod {
 
     private static Logger LOG = LogManager.getLogger(Tags.MODID);
 
-    @SidedProxy(clientSide= Tags.GROUPNAME + ".ClientProxy", serverSide=Tags.GROUPNAME + ".CommonProxy")
+    @SidedProxy(clientSide = Tags.GROUPNAME + ".ClientProxy", serverSide = Tags.GROUPNAME + ".CommonProxy")
     public static CommonProxy proxy;
 
     public static Block blockCompiler;
@@ -30,7 +32,7 @@ public class RednetVerilogMod {
     // etc, and register them with the GameRegistry."
     public void preInit(FMLPreInitializationEvent event) {
         blockCompiler = new BlockCompiler(Material.rock).setBlockName("BlockCompiler");
-        blockCompiler.setBlockTextureName(Tags.MODID + ":"  + blockCompiler.getUnlocalizedName());
+        blockCompiler.setBlockTextureName(Tags.MODID + ":" + blockCompiler.getUnlocalizedName());
         GameRegistry.registerBlock(blockCompiler, "blockCompiler");
         proxy.preInit(event);
     }
@@ -38,7 +40,10 @@ public class RednetVerilogMod {
     @Mod.EventHandler
     // load "Do your mod setup. Build whatever data structures you care about. Register recipes."
     public void init(FMLInitializationEvent event) {
-        GameRegistry.addRecipe(new ItemStack(blockCompiler), new Object[]{"RDR", "DID", "RDR", 'R', Items.redstone, 'D', Blocks.diamond_block, 'I', Blocks.iron_block});
+        GameRegistry.addRecipe(
+            new ItemStack(blockCompiler),
+            new Object[] { "RDR", "DID", "RDR", 'R', Items.redstone, 'D', Blocks.diamond_block, 'I',
+                Blocks.iron_block });
         proxy.init(event);
     }
 

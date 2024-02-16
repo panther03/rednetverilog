@@ -1,16 +1,22 @@
-[
-    {
-      "modid": "${modId}",
-      "name": "${modName}",
-      "description": "Unholy and utterly impractical use of Verilog",
-      "version": "${modVersion}",
-      "mcversion": "${minecraftVersion}",
-      "url": "https://github.com/panther03/rednetverilog",
-      "updateUrl": "",
-      "authorList": ["panther03"],
-      "credits": "",
-      "logoFile": "",
-      "screenshots": [],
-      "dependencies": []
-    }
-]
+{
+	"modListVersion": 2,
+	"modList": [{
+		"modid": "${modId}",
+		"name": "${modName}",
+		"description": "Unholy and utterly impractical use of Verilog",
+		"version": "${modVersion}",
+		"mcversion": "${minecraftVersion}",
+		"url": "https://github.com/panther03/rednetverilog",
+		"updateUrl": "",
+		"authorList": ["panther03"],
+		"credits": "",
+		"logoFile": "",
+		"screenshots": [],
+		"parent": "",
+		"requiredMods": [],
+		"dependencies": [],
+		"dependants": [],
+		"useDependencyInformation": false
+	}]
+}
+

@@ -1,19 +1,20 @@
 package com.panther03.rednetverilog;
 
-import com.google.common.io.ByteStreams;
-import com.panther03.compiler.PortExtraction;
-import com.panther03.compiler.RednetCodegen;
-import cpw.mods.fml.common.event.*;
+import java.io.*;
+
 import org.apache.commons.io.IOUtils;
 
-import java.io.*;
+import com.panther03.compiler.RednetCodegen;
+
+import cpw.mods.fml.common.event.*;
 
 public class CommonProxy {
 
     // preInit "Run before anything else. Read your config, create blocks, items,
     // etc, and register them with the GameRegistry."
-    public void preInit(FMLPreInitializationEvent event) 	{
-        RednetVerilogMod.info("I am " + Tags.MODNAME + " at version " + Tags.VERSION + " and group name " + Tags.GROUPNAME);
+    public void preInit(FMLPreInitializationEvent event) {
+        RednetVerilogMod
+            .info("I am " + Tags.MODNAME + " at version " + Tags.VERSION + " and group name " + Tags.GROUPNAME);
 
         File jsonFile = new File(event.getModConfigurationDirectory(), "rednetverilog_circuits.json");
         // https://github.com/lumien231/Custom-Main-Menu/blob/cc934c1d96691190d7479927735d58dac4c263a9/src/main/java/lumien/custommainmenu/configuration/ConfigurationLoader.java#L43
@@ -29,8 +30,7 @@ public class CommonProxy {
             }
         }
 
-        if (jsonFile.exists())
-        {
+        if (jsonFile.exists()) {
             RednetCodegen.AddCircuits(jsonFile);
         }
 

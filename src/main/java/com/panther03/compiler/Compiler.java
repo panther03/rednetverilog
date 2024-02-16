@@ -1,20 +1,21 @@
 package com.panther03.compiler;
 
-import net.minecraft.nbt.NBTBase;
-import org.antlr.v4.runtime.tree.ParseTree;
-
 import java.util.HashMap;
 import java.util.Map;
 
+import net.minecraft.nbt.NBTBase;
+
+import org.antlr.v4.runtime.tree.ParseTree;
+
 public class Compiler {
+
     public static class PassData {
+
         protected HashMap<String, PortExtraction.Port> portMap;
 
-        public PassData () {
+        public PassData() {
             this.portMap = new HashMap<>();
         }
-
-
 
         public void printMap() {
             System.out.println("map:");
