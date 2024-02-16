@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package com.deez.sdc;
 
 import cpw.mods.fml.common.event.*;
 

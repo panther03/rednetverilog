@@ -1,0 +1,19 @@
+generateGrammarSource {
+    maxHeapSize = "128m"
+    arguments += ['-package', 'com.deez.compiler.VerilogParser', '-visitor', '-no-listener']
+}
+compileJava.dependsOn generateGrammarSource
+
+sourceSets {
+    generated {
+        java.srcDir 'generated-src/antlr/main/'
+    }
+}
+compileJava.source += sourceSets.generated.java
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}

@@ -1,23 +1,34 @@
-package com.myname.mymodid;
+package com.deez.sdc;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Tags.MODID, version = Tags.VERSION, name = Tags.MODNAME, acceptedMinecraftVersions = "[1.7.10]")
 public class MyMod {
 
+    @Mod.Instance(Tags.MODID)
+    public static MyMod instance;
+
     private static Logger LOG = LogManager.getLogger(Tags.MODID);
 
     @SidedProxy(clientSide= Tags.GROUPNAME + ".ClientProxy", serverSide=Tags.GROUPNAME + ".CommonProxy")
     public static CommonProxy proxy;
 
+    public static Block blockCompiler;
+
     @Mod.EventHandler
     // preInit "Run before anything else. Read your config, create blocks, items,
     // etc, and register them with the GameRegistry."
     public void preInit(FMLPreInitializationEvent event) {
+        blockCompiler = new BlockCompiler(Material.rock).setBlockName("BlockCompiler");
+        GameRegistry.registerBlock(blockCompiler, "blockCompiler");
         proxy.preInit(event);
     }
 
