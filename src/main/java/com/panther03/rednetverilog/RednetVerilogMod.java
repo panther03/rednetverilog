@@ -14,15 +14,19 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-@Mod(modid = Tags.MODID, version = Tags.VERSION, name = Tags.MODNAME, acceptedMinecraftVersions = "[1.7.10]")
+@Mod(modid = RednetVerilogMod.MODID, version = Tags.VERSION, name = RednetVerilogMod.MODNAME, acceptedMinecraftVersions = "[1.7.10]")
 public class RednetVerilogMod {
 
-    @Mod.Instance(Tags.MODID)
+    public static final String MODID = "rednetverilog";
+    public static final String GROUP = "com.panther03." + MODID;
+    public static final String MODNAME = "Verilog for RedNet";
+
+    @Mod.Instance(MODID)
     public static RednetVerilogMod instance;
 
-    private static Logger LOG = LogManager.getLogger(Tags.MODID);
+    private static Logger LOG = LogManager.getLogger(MODID);
 
-    @SidedProxy(clientSide = Tags.GROUPNAME + ".ClientProxy", serverSide = Tags.GROUPNAME + ".CommonProxy")
+    @SidedProxy(clientSide = GROUP + ".ClientProxy", serverSide = GROUP + ".CommonProxy")
     public static CommonProxy proxy;
 
     public static Block blockCompiler;
@@ -32,7 +36,7 @@ public class RednetVerilogMod {
     // etc, and register them with the GameRegistry."
     public void preInit(FMLPreInitializationEvent event) {
         blockCompiler = new BlockCompiler(Material.rock).setBlockName("BlockCompiler");
-        blockCompiler.setBlockTextureName(Tags.MODID + ":" + blockCompiler.getUnlocalizedName());
+        blockCompiler.setBlockTextureName(MODID + ":" + blockCompiler.getUnlocalizedName());
         GameRegistry.registerBlock(blockCompiler, "blockCompiler");
         proxy.preInit(event);
     }

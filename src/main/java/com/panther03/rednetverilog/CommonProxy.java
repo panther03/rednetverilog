@@ -14,7 +14,7 @@ public class CommonProxy {
     // etc, and register them with the GameRegistry."
     public void preInit(FMLPreInitializationEvent event) {
         RednetVerilogMod
-            .info("I am " + Tags.MODNAME + " at version " + Tags.VERSION + " and group name " + Tags.GROUPNAME);
+            .info("I am " + RednetVerilogMod.MODNAME + " at version " + Tags.VERSION + " and group name " + RednetVerilogMod.GROUP);
 
         File jsonFile = new File(event.getModConfigurationDirectory(), "rednetverilog_circuits.json");
         // https://github.com/lumien231/Custom-Main-Menu/blob/cc934c1d96691190d7479927735d58dac4c263a9/src/main/java/lumien/custommainmenu/configuration/ConfigurationLoader.java#L43
