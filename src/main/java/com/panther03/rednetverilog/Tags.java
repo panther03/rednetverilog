@@ -1,4 +1,4 @@
-package com.deez.sdc;
+package com.panther03.rednetverilog;
 
 // Use this class for Strings only. Do not import any classes here. It will lead to issues with Mixins if in use!
 

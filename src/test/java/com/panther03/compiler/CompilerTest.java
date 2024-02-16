@@ -1,9 +1,8 @@
-package com.deez.compiler;
+package com.panther03.compiler;
 
 
-import com.deez.compiler.VerilogParser.VerilogLexer;
-import com.deez.compiler.VerilogParser.VerilogPreParser;
-import com.deez.compiler.VerilogParser.VerilogParser;
+import com.panther03.compiler.VerilogParser.VerilogLexer;
+import com.panther03.compiler.VerilogParser.VerilogParser;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;

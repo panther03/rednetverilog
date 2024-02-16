@@ -1,6 +1,6 @@
 generateGrammarSource {
     maxHeapSize = "128m"
-    arguments += ['-package', 'com.deez.compiler.VerilogParser', '-visitor', '-no-listener']
+    arguments += ['-package', 'com.panther03.compiler.VerilogParser', '-visitor', '-no-listener']
 }
 compileJava.dependsOn generateGrammarSource
 

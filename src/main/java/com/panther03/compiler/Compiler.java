@@ -1,4 +1,4 @@
-package com.deez.compiler;
+package com.panther03.compiler;
 
 import net.minecraft.nbt.NBTBase;
 import org.antlr.v4.runtime.tree.ParseTree;

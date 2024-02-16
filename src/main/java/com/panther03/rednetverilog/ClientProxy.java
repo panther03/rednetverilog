@@ -1,4 +1,4 @@
-package com.deez.sdc;
+package com.panther03.rednetverilog;
 
 import cpw.mods.fml.common.event.*;
 

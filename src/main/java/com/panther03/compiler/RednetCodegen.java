@@ -1,17 +1,12 @@
-package com.deez.compiler;
+package com.panther03.compiler;
 
-import com.deez.compiler.VerilogParser.VerilogParser;
-import com.deez.compiler.VerilogParser.VerilogParserBaseVisitor;
+import com.panther03.compiler.VerilogParser.VerilogParser;
+import com.panther03.compiler.VerilogParser.VerilogParserBaseVisitor;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagInt;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraftforge.common.util.Constants;
 
-import java.lang.reflect.Method;
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 
 public class RednetCodegen extends VerilogParserBaseVisitor<NBTBase> {

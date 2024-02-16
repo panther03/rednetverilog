@@ -1,6 +1,6 @@
-package com.deez.compiler;
+package com.panther03.compiler;
 
-import com.deez.compiler.VerilogParser.*;
+import com.panther03.compiler.VerilogParser.*;
 import net.minecraft.nbt.NBTTagCompound;
 
 import java.util.*;
