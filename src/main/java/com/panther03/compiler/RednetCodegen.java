@@ -276,7 +276,7 @@ public class RednetCodegen extends VerilogParserBaseVisitor<NBTBase> {
                             if (sctx == null) {
                                 // Single-wire ports always work even in vectored instantiations;
                                 // we simply duplicate the single wire
-                                if (i > wiredPort.wireSize()) {
+                                if (i >= wiredPort.wireSize()) {
                                     primNbt = newPin(0, 0);
                                 } else if (wiredPort.wireSize() == 1) {
                                     primNbt = wiredPort.codegen(0);

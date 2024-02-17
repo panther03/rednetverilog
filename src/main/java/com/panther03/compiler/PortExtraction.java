@@ -82,7 +82,7 @@ public class PortExtraction extends VerilogParserBaseVisitor<Void> {
         }
 
         public NBTTagCompound codegen(int index) {
-            if (index > colors.size()) {
+            if (index >= colors.size()) {
                 throw new RuntimeException("Access beyond size of I/O port: " + index + " > " + colors.size());
             }
             Color color = colors.get(index);
@@ -117,7 +117,7 @@ public class PortExtraction extends VerilogParserBaseVisitor<Void> {
         }
 
         public NBTTagCompound codegen(int index) {
-            if (index > wireCnt || index < 0) {
+            if (index >= wireCnt || index < 0) {
                 throw new RuntimeException("Access beyond size of variable port: " + index + " > " + wireCnt);
             }
             NBTTagCompound n = new NBTTagCompound();

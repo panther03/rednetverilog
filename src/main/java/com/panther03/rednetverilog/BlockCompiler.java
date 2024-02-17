@@ -1,6 +1,8 @@
 package com.panther03.rednetverilog;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
@@ -119,6 +121,10 @@ public class BlockCompiler extends Block {
                 n = compileProgram(program.toString());
             } catch (Exception e) {
                 compilerMsg("Exception during compilation: " + e, 2);
+                StringWriter sw = new StringWriter();
+                PrintWriter p = new PrintWriter(sw);
+                e.printStackTrace(p);
+                RednetVerilogMod.error(sw.toString());
                 return;
             }
             if (n == null) {
